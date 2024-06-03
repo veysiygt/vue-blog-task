@@ -32,24 +32,23 @@ export default {
     SearchInput,
   },
   data() {
-    return {
-      searchQuery: "",
-    };
-  },
-  setup() {
     const authStore = useAuthStore();
     const postStore = usePostStore();
     return {
+      searchQuery: "",
+      filteredPosts: [],
       authStore,
       postStore,
     };
   },
-  computed: {
-    filteredPosts() {
-      return filterPosts(this.postStore.posts, this.searchQuery);
-    },
+  watch: {
+    searchQuery: "filterPosts",
+    "postStore.posts": "filterPosts",
   },
   methods: {
+    filterPosts() {
+      this.filteredPosts = filterPosts(this.postStore.posts, this.searchQuery);
+    },
     viewDetails(postId) {
       this.$router.push({ name: "PostDetails", params: { id: postId } });
     },
@@ -60,6 +59,7 @@ export default {
   },
   created() {
     this.postStore.fetchPosts();
+    this.filterPosts();
   },
 };
 </script>
