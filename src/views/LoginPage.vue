@@ -1,7 +1,6 @@
 <template>
   <div
     class="min-h-screen flex items-center justify-center bg-cover bg-center p-4"
-    style="background-color: #111827"
   >
     <div
       class="max-w-md w-full bg-white bg-opacity-90 shadow-md rounded-lg p-8"
