@@ -1,5 +1,3 @@
-# vue2-pinia-router-login
-
 ## Project setup
 ```
 pnpm install
@@ -22,5 +20,4 @@ pnpm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# vue-blog-task
 # vue-blog-task
